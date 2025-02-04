@@ -16,3 +16,8 @@ This will create a folder named ```sp25-cs211-assignments```, which contains the
 
 - You are not given template code. Instead, you will make the pa1 folder in the ```sp25-cs211-assignment``` folder
 ## Errata
+
+February 4th, 2025 @ 14:16
+
+- The testcases ignored neglected to address potential differences in the calculation. I've changed the output test cases to remove the -0.000000. 
+- In other words, you should, if you have -0.000000, print 0.000000.
