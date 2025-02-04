@@ -1,5 +1,7 @@
 # This is a reference Makefile for you benefit.
-
+# to use the Makefile, you run:
+# make first - this compiles the C file into an executable named first
+# make clean - will delete first
 # These are variables, so you don't have to write gcc and "-fsanitize=address,undefined -Og -g -Wall -Werror -std=c11" over and over again.
 CC=gcc
 CFLAG = -fsanitize=address,undefined -Og -g -Wall -Werror -std=c11
