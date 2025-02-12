@@ -15,7 +15,7 @@ def part_one_test(test_name,command,expected):
         print(f'test case {test_name} - passed!')
         total_points = total_points + 1
     else:
-        print(f'test case {test_name} - failed! expected: {expected}, actual: {test_one.stdout.decode().strip()}')
+        print(f'test case {test_name}, input {command[1]} - failed! expected: {expected}, actual: {test_one.stdout.decode().strip()}')
     
 def grade_part_one():
     print('===part one - grading===')
