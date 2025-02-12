@@ -12,7 +12,7 @@ def part_one_test(test_name,command,expected):
     test_one = subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
 
     if int(test_one.stdout.decode().strip()) == expected:
-        print(f'test case {test_name} - passed!')
+        print(f'test case {test_name}, input {command[1]} - passed!')
         total_points = total_points + 1
     else:
         print(f'test case {test_name}, input {command[1]} - failed! expected: {expected}, actual: {test_one.stdout.decode().strip()}')
