@@ -21,3 +21,8 @@ February 4th, 2025 @ 14:16
 
 - The test cases neglected to address potential differences in the calculation. I've changed the output test cases to remove the -0.000000. 
 - In other words, if you have -0.000000, you should print 0.000000.
+
+February 12th, 2025 @ 16:03
+
+- I added the input and output for the first part. This is **solely for reference; you should not read from a text file for part 1**.
+- I also updated the autograder to specify, for part 1, what input failed
