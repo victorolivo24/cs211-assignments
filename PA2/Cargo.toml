@@ -1,0 +1,10 @@
+[package]
+name = "CS211-TA-SHARE"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cc = "1.2.15"
+libc = "0.2.170"
+libloading = "0.8.6"
+rand = "0.9.0"
