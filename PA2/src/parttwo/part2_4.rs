@@ -72,14 +72,7 @@ pub mod test{
                 .expect("Failed to get signed_decimal_to_twos_complement")
         };
         let input_num: i64 = rand::random_range(i64::MIN..=i64::MAX) as i64;
-        let expected = format!("{:#b}", input_num);
-        let expected = &expected[2..];
-        let expected = if input_num < 0 {
-            format!("{:1>64}",expected)
-        }
-        else{
-            format!("{:0>64}",expected)
-        };
+        let expected = format!("{:064b}", input_num);
         let result = unsafe { signed_decimal_to_twos_complement(input_num, 64) };
         assert!(!result.is_null());
         let result = unsafe { CStr::from_ptr(result) };

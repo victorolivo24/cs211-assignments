@@ -62,7 +62,7 @@ pub mod test{
         assert!(!result.is_null(),"return value is NULL");
         let result = unsafe { CStr::from_ptr(result) };
         let result = result.to_string_lossy().into_owned();
-        assert_eq!(result,&format!("{:#b}",num)[2..],"test_4 - FAILED")
+        assert_eq!(result,format!("{:b}",num),"test_4 - FAILED")
     }
 
     #[test]
@@ -76,7 +76,7 @@ pub mod test{
         let result = unsafe{unsigned_decimal_to_binary(num,64)};
         let result = unsafe{CStr::from_ptr(result)};
         let result = result.to_string_lossy().into_owned();
-        let padded_binary = format!("{:0>64b}", num);
+        let padded_binary = format!("{:064b}", num);
         assert_eq!(result,padded_binary,"test_5 - FAILED!");
     }
 }

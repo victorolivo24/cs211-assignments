@@ -82,7 +82,7 @@ pub mod test{
         };
         let rand_num: i64 = rand::random_range(0..i64::MAX);
         let signed = if rand::random_bool(0.5) {'1'} else {'0'};
-        let str = CString::new(format!("{}{:#b}",signed,rand_num))
+        let str = CString::new(format!("{}{:b}",signed,rand_num))
             .expect("Failed to create c_string");
         let result = unsafe {binary_to_signed_magnitude_decimal(str.as_ptr()) };
         assert_eq!(

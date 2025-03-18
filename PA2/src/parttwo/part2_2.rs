@@ -86,7 +86,7 @@ pub mod test {
 
         let abs_bin = format!("{:b}", num);
         let sign_bit = if temp_num < 0 { "1" } else { "0" };
-        let padded_binary = format!("{:0>width$}", abs_bin, width = (num_bits - 1) as usize);
+        let padded_binary = format!("{:0width$}", abs_bin, width = (num_bits - 1) as usize);
         let expected = format!("{}{}", sign_bit, padded_binary);
         
         let result = unsafe { CStr::from_ptr(result) };

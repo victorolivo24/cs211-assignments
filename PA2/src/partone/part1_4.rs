@@ -65,8 +65,8 @@ pub mod test {
         };
         let input: i64 = rand::random_range(i64::MIN..=i64::MAX);
 
-        let str = CString::new(format!("{:#b}", input)).expect("Failed to create c_string");
-        println!("{:#b}", input);
+        let str = CString::new(format!("{:064b}", input)).expect("Failed to create c_string");
+        println!("{:b}", input);
         let result = unsafe { binary_to_twos_complement_decimal(str.as_ptr()) };
         assert_eq!(
             result, input,

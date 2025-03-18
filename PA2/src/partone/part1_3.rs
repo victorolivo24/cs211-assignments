@@ -62,10 +62,17 @@ pub mod test {
             lib.get(b"binary_to_ones_complement_decimal")
                 .expect("Failed to get unsigned_bin_to_dec")
         };
-        let input: i64 = rand::random_range(i64::MIN..=i64::MAX);
-
-        let str = CString::new(format!("{:#b}", input)).expect("Failed to create c_string");
-        println!("{:#b}", input);
+        let mut input: i64 = rand::random_range(0..=i64::MAX);
+        let bool_stat = rand::random_bool(0.5);
+        let sign = if bool_stat {!input} else {input};
+        let stri = format!("{:064b}",sign);
+        if bool_stat {
+            input *= -1;
+        }
+        println!("expected value: {}",input);
+        println!("input: {}", stri);
+        let str = CString::new(stri).expect("Failed to create c_string");
+        
         let result = unsafe { binary_to_ones_complement_decimal(str.as_ptr()) };
         assert_eq!(
             result, input,

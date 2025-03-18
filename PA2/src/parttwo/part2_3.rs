@@ -80,7 +80,7 @@ pub mod test {
         let result = rand::random_range(0..=i64::MAX);
         let input_num = if rand::random_bool(0.5) {-result} else {result};
         let return_val = unsafe{signed_decimal_to_ones_complement(input_num,64)};
-        let expected = format!("{:0>64b}", if input_num < 0 {!result} else {result});
+        let expected = format!("{:064b}", if input_num < 0 {!result} else {result});
         let return_val = unsafe {CStr::from_ptr(return_val)};
         let return_val = return_val.to_string_lossy().into_owned();
         assert_eq!(expected,return_val);
