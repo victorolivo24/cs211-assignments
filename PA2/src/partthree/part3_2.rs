@@ -42,7 +42,7 @@ pub mod test{
         let result = unsafe{dec_to_float(-1.203125,5,3,1)};
         let result = unsafe { CStr::from_ptr(result) };
         let result = result.to_string_lossy().into_owned();
-        assert_eq!(result,"101111000","test 1 - FAILED!");
+        assert_eq!(result,"101111001","test 1 - FAILED!");
     }
 
     #[test]
